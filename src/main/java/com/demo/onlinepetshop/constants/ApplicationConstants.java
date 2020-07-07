@@ -13,7 +13,7 @@ public class ApplicationConstants {
 	public static final Integer UNAUTHORIZED_USER_CODE =HttpStatus.UNAUTHORIZED.value();
 	public static final String USER_NOT_FOUND = "Please verify userId";
 	public static final Integer USER_NOT_FOUND_CODE = 600;
-	public static final String PET_NOT_FOUND = "No pets found !!!Please verify your petId";
+	public static final String PET_NOT_FOUND = "No pets found !!!Please verify your input";
 	public static final Integer PET_NOT_FOUND_CODE = 601;
 	public static final int USER_LOGGED_CODE = HttpStatus.FOUND.value();
 	public static final String USER_LOGGED_IN = "user logged in successfully";
@@ -29,6 +29,10 @@ public class ApplicationConstants {
 	public static final Object LOGINFO_ORDERHISTORY_3 = "collecting petIds entered";
 	public static final Object LOGINFO_ORDERHISTORY_4 = "petIds are not found";
 	public static final Object LOGINFO_ORDERHISTORY_5 = "Order saved successfully";
+	public static final Object LOGINFO_PET_1 = "fetching petAnimal list by animalName";
+	public static final Object LOGINFO_PET_2 = "Enetered the getPetAnimal method";
+	public static final Object LOGINFO_PET_3 = "Returning the list of pet animal breeds of particular animal";
+	public static final Object LOGINFO_PET_4 = "No pet animal found with the request";
 	
 	
 	

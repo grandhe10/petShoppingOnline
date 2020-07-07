@@ -82,7 +82,9 @@ public class OrderHistoryServiceImpl implements OrderHistoryService{
 	{
 		Optional<Pet> petOptional = petDao.findByPetId(petDto.getPetId());
 		if(!petOptional.isPresent())
-		return null;
+			{
+				return null;
+			}
 		else
 			return petOptional.get().getPetId();
 		

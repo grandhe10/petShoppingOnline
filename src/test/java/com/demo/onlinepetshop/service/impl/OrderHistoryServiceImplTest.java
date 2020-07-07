@@ -25,7 +25,6 @@ import com.demo.onlinepetshop.dao.PetDao;
 import com.demo.onlinepetshop.dao.UserDao;
 import com.demo.onlinepetshop.dto.OrderResponseDto;
 import com.demo.onlinepetshop.dto.PetDto;
-import com.demo.onlinepetshop.exception.PetNotFoundException;
 import com.demo.onlinepetshop.exception.UserNotFoundException;
 import com.demo.onlinepetshop.model.OrderHistory;
 import com.demo.onlinepetshop.model.Pet;
