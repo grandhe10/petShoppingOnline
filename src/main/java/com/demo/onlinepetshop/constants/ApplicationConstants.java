@@ -38,6 +38,7 @@ public class ApplicationConstants {
 	public static final Integer NO_ORDERS_FOUND_CODE = 700;
 	public static final Object LOGINFO_USER_4 = "No pet found with the petId";
 	public static final Object LOGINFO_USER_5 = "Returning the order history of the user";
+	public static final Object LOGINFO_PETCONTROLLER_1 = "Found getPetAnimalsList method";
 	
 	
 	

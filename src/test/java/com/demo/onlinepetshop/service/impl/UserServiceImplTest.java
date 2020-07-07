@@ -140,7 +140,7 @@ public class UserServiceImplTest {
 	@Test
 	public void getOrderHistoryTest1()
 	{
-		Long userId = 1L;
+		
 		User user = new User();
     	user.setPassword("test123");
     	user.setUserId(1L);
