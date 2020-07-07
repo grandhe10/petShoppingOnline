@@ -1,13 +1,19 @@
 package com.demo.onlinepetshop.controller;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,10 +26,12 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-
 import com.demo.onlinepetshop.constants.ApplicationConstants;
 import com.demo.onlinepetshop.dto.LoginDto;
 import com.demo.onlinepetshop.dto.LoginResponseDto;
+import com.demo.onlinepetshop.dto.OrderHistoryDto;
+import com.demo.onlinepetshop.model.OrderHistory;
+import com.demo.onlinepetshop.model.User;
 import com.demo.onlinepetshop.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 @ExtendWith(MockitoExtension.class)
@@ -67,5 +75,43 @@ public class UserControllerTest {
         verify(userService).loginUser(any(LoginDto.class));
     }
 
+    @Test
+    public void getOrderHistoryTest() throws Exception
+    {
+    	User user = new User();
+    	user.setPassword("test123");
+    	user.setUserId(1L);
+    	user.setUserName("TEST123");
+       
+    	OrderHistory orderHistory = new OrderHistory();
+    	
+    	orderHistory.setOrderHistoryId(1L);
+    	orderHistory.setOrderTime(LocalDateTime.now());
+    	orderHistory.setPetId(1L);
+    	orderHistory.setUser(user);
+    	
+    	List<OrderHistoryDto> orderHistoryDtoList = new ArrayList<>();
+    	
+    	OrderHistoryDto orderHistoryDto = new OrderHistoryDto();
+    	orderHistoryDto.setAge(2);
+    	orderHistoryDto.setBreed("breed1");
+    	orderHistoryDto.setGender("male");
+    	orderHistoryDto.setOrderTime(orderHistory.getOrderTime());
+    	orderHistory.setUser(user);
+    	
+    	orderHistoryDtoList.add(orderHistoryDto);
+    	
+        when(userService.getOrderHistory(eq(1L))).thenReturn(orderHistoryDtoList);
+        mockMvc.perform(get("/users/{userId}/orders",1L)
+        	      .contentType(MediaType.APPLICATION_JSON))
+        	      .andExpect(status().isFound())
+        	      .andExpect(content()
+        	      .contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+        	      .andExpect(jsonPath("$.[0]", Matchers.any(LinkedHashMap.class)));
+
+        verify(userService).getOrderHistory(eq(1L));
+    }
+    
+    
     
 }

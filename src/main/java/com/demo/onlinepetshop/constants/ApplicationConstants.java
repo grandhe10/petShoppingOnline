@@ -21,7 +21,7 @@ public class ApplicationConstants {
 	public static final Object LOGINFO_USERCONTROLLER_1 = "UserService method Login User is  found";
 	public static final Object LOGINFO_USER_2 = "User found ";
 	public static final Object LOGINFO_USER_3 = "User not found";
-	public static final Object LOGINFO_ORDERCONTROLLER_1 = "orderHistory Servce method placeOrder is found";
+	public static final Object LOGINFO_ORDERCONTROLLER_1 = "orderHistory Service method placeOrder is found";
 	public static final Object LOGINFO_ORDERHISTORY_1 = "Verifying user";
 	public static final Object LOGINFO_ORDERHISTORY_2 = "User not found";
 	public static final String ORDER_SUCCESS = "Order placed successfully";
@@ -33,6 +33,11 @@ public class ApplicationConstants {
 	public static final Object LOGINFO_PET_2 = "Enetered the getPetAnimal method";
 	public static final Object LOGINFO_PET_3 = "Returning the list of pet animal breeds of particular animal";
 	public static final Object LOGINFO_PET_4 = "No pet animal found with the request";
+	public static final Object LOGINFO_USERCONTROLLER_2 = "Entered getOrder history method ";
+	public static final String NO_ORDERS_FOUND = "You dont have any previous orders";
+	public static final Integer NO_ORDERS_FOUND_CODE = 700;
+	public static final Object LOGINFO_USER_4 = "No pet found with the petId";
+	public static final Object LOGINFO_USER_5 = "Returning the order history of the user";
 	
 	
 	

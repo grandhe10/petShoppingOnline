@@ -51,6 +51,7 @@ public class PetServiceImpl implements PetService{
 		petAnimalResponse.setGender(pet.getGender());
 		petAnimalResponse.setPetId(pet.getPetId());
 		petAnimalResponse.setPrice(pet.getPrice());
+		petAnimalResponse.setPetAnimalName(pet.getPetAnimalName());
 		
 		return petAnimalResponse;
 		

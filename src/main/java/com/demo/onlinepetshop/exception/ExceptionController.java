@@ -41,6 +41,14 @@ public class ExceptionController extends ResponseEntityExceptionHandler{
 		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
 	}
 	
+	@ExceptionHandler(value = NoOrdersFoundException.class)
+	public ResponseEntity<ErrorResponse> exception(NoOrdersFoundException exception) {
+		ErrorResponse errorResponse = new ErrorResponse();
+		errorResponse.setMessage(ApplicationConstants.NO_ORDERS_FOUND);
+		errorResponse.setStatusCode(ApplicationConstants.NO_ORDERS_FOUND_CODE);
+		return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+	}
+	
 	 @Override
 	    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
 	       ErrorResponse errorResponse = new ErrorResponse();
