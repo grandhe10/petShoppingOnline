@@ -39,6 +39,7 @@ public class UserController {
 	 * @param loginDto
 	 * @return ResponseEntity with headers and LoginResponseDto with message and statusCode
 	 */
+	
 	@PostMapping("/users")
 	public ResponseEntity<LoginResponseDto> loginUser(@Valid @RequestBody LoginDto loginDto)
 	{
@@ -51,6 +52,7 @@ public class UserController {
 	 * @param userId
 	 * @return ResponseEntity with headers and List of orders in OrderHistory 
 	 */
+	
 	@GetMapping("/users/{userId}/orders")
 	public ResponseEntity<List<OrderHistoryDto>> getOrderHistory(@PathVariable("userId") Long userId)
 	{

@@ -32,6 +32,12 @@ public class OrderHistoryController {
 	@Autowired
 	OrderHistoryService orderHistoryService;
 	
+	/**
+	 * This method is used to place order 
+	 * @param petDtoList
+	 * @param userId
+	 * @return ResponseEntity with header,OrderResponseDto with parameters message and statusCode
+	 */
 	@PostMapping("/users/{userId}/orders")
 	public ResponseEntity<OrderResponseDto> placeOrder(@Valid @RequestBody List<PetDto> petDtoList,@PathVariable("userId") Long userId)
 	{
