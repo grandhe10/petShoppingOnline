@@ -40,6 +40,7 @@
       	src/main/java/com/demo/onlinepetshop/service/OrderHistoryService.java
       	src/main/java/com/demo/onlinepetshop/exception/PetNotFoundException.java
       	src/main/java/com/demo/onlinepetshop/exception/ErrorResponse.java
+      	src/main/java/com/demo/onlinepetshop/constants/ApplicationConstants.java
         </sonar.coverage.exclusions>
 	</properties>
 
