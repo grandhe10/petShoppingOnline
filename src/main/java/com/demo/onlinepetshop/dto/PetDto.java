@@ -8,4 +8,12 @@ public class PetDto {
 	@Min(1)
 	Long petId;
 
+	public Long getPetId() {
+		return petId;
+	}
+
+	public void setPetId(Long petId) {
+		this.petId = petId;
+	}
+
 }
