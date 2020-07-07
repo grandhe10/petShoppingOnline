@@ -15,6 +15,7 @@ import com.demo.onlinepetshop.dto.PetAnimalResponse;
 import com.demo.onlinepetshop.exception.PetNotFoundException;
 import com.demo.onlinepetshop.model.Pet;
 import com.demo.onlinepetshop.service.PetService;
+
 @Service
 public class PetServiceImpl implements PetService{
 
@@ -34,7 +35,7 @@ public class PetServiceImpl implements PetService{
 			throw new PetNotFoundException(ApplicationConstants.PET_NOT_FOUND);
 		}
 		
-		List<PetAnimalResponse> responseList = petList.get().stream().map(pet->getPetAnimal(pet)).collect(Collectors.toList());
+		List<PetAnimalResponse> responseList = petList.get().stream().map(this::getPetAnimal).collect(Collectors.toList());
 		
 		logger.info(ApplicationConstants.LOGINFO_PET_3);
 		
@@ -56,4 +57,6 @@ public class PetServiceImpl implements PetService{
 		return petAnimalResponse;
 		
 	}
+
+	
 }

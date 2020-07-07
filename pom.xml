@@ -41,6 +41,7 @@
       	src/main/java/com/demo/onlinepetshop/exception/PetNotFoundException.java
       	src/main/java/com/demo/onlinepetshop/exception/ErrorResponse.java
       	src/main/java/com/demo/onlinepetshop/constants/ApplicationConstants.java
+      	src/main/java/com/demo/onlinepetshop/exception/NoOrdersFoundException.java
         </sonar.coverage.exclusions>
 	</properties>
 
