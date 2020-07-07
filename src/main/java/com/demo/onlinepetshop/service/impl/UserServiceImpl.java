@@ -85,9 +85,7 @@ public class UserServiceImpl implements UserService{
 		
 		logger.info(ApplicationConstants.LOGINFO_USER_5);	
 		
-		List<OrderHistoryDto> orderHistoryList =  orderListOptional.get().stream().map(orderHistory->getOrderResponse(orderHistory)).collect(Collectors.toList());
-		
-		return orderHistoryList;
+		return orderListOptional.get().stream().map(orderHistory->getOrderResponse(orderHistory)).collect(Collectors.toList());
 	}
 	
 	private OrderHistoryDto getOrderResponse(OrderHistory orderHistory)
